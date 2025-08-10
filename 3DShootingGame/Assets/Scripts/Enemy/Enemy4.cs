@@ -1,0 +1,53 @@
+using System.Collections;
+using UnityEngine;
+
+public class Enemy4 : Enemy
+{
+    public float rushSpeed = 30f;
+    private void Start()
+    {
+        speed = 5f;
+        dir = Vector3.down;
+        HP = 180;
+        enemyScore = 5000;
+        InvokeRepeating(nameof(FireBullet), 0f, 0.2f);
+        StartCoroutine(RushAfterDelay(9f));
+        StartCoroutine(bulletStop(7f));
+
+
+    }
+
+    protected override void FireBullet()
+    {
+        base.FireBullet();
+        var target = GameObject.FindWithTag("Player");
+        
+        if (target != null)
+        {
+            Vector3 bulletDir = (target.transform.position - firePoint.position).normalized;
+            for (int i=0; i<30; i++)
+            {
+                int CurrentI = i;
+                SetBullet(bulletObjectPool, firePoint.position, () => Quaternion.Euler(0, 0, (12 * CurrentI)) * bulletDir, () => 6);
+            
+                //CreateBullet(bulletPrefab, firePoint.position, () => Quaternion.Euler(0, 0, (12 * CurrentI)) * bulletDir, () => 6);
+            }        
+        }
+    }
+
+
+    IEnumerator RushAfterDelay(float delaySeconds)
+    {
+        
+        yield return new WaitForSeconds(1);
+        speed = 0.0f;
+        yield return new WaitForSeconds(delaySeconds);
+
+        var target = GameObject.FindWithTag("Player");
+        dir = target.transform.position - transform.position;
+        dir.Normalize();
+        speed = rushSpeed;
+    }
+
+    
+}
