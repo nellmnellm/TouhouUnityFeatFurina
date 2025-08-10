@@ -1,5 +1,15 @@
 # TouhouUnityFeatFurina
 동방유니티(feat.푸리나) 
+### 메인 씬
+<img width="582" height="874" alt="image" src="https://github.com/user-attachments/assets/1fe442e7-8d23-4cb4-84f5-b00e1227a927" />
+
+### 캐릭터 선택 씬
+<img width="588" height="875" alt="image" src="https://github.com/user-attachments/assets/87bdf928-2c1a-4725-8324-67afad5b6c23" />
+
+### 게임 씬
+<img width="581" height="860" alt="image" src="https://github.com/user-attachments/assets/2f0969db-fb9e-4a56-be3d-d28ff367fd62" />
+
+<img width="581" height="863" alt="image" src="https://github.com/user-attachments/assets/7151ae7f-4b6c-4edd-82f6-996422ac1d7c" />
 
 # Unity 교육용 프로젝트
 
